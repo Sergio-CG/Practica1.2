@@ -52,9 +52,11 @@ public class EmailList extends HttpServlet {
 			// Y se almacena el email en una cookie para poder identificar en el futuro
 			// al usuario mediante su email cuando vuelva a navegar por el sitio web
 			Cookie c = new Cookie("emailCookie", email);
-			c.setMaxAge(60*60*24*365*2);
+			c.setMaxAge(60*60*24);
 			c.setPath("/");
 			response.addCookie(c);
+			
+			
 	}
 
 }

@@ -1,4 +1,4 @@
-package paq;
+package HoraServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Servlet
+ * Servlet implementation class HoraServlet
  */
-@WebServlet("/Servlet")
-public class Servlet extends HttpServlet {
+@WebServlet("/HoraServlet")
+public class HoraServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet() {
+    public HoraServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,10 +30,9 @@ public class Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		
 		HttpSession sesion = request.getSession(true);
 		response.setContentType("text/html");
@@ -46,7 +45,7 @@ public class Servlet extends HttpServlet {
 		else {
 		html.print("Este es el primer acceso de la sesión <br>");
 		}
-		date = new Date(0);
+		date = new Date();
 		sesion.setAttribute("date", date);
 		html.print("Fecha actual: " + date);
 		html.print("</strong>");
